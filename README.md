@@ -1,4 +1,4 @@
-# OS 2024 – Project: Image Processing with CUDA  
+# Project: Image Processing with CUDA  
 
 ## Overview  
 This project implements three basic image processing algorithms using **CUDA / PyCUDA**:  
@@ -12,13 +12,13 @@ The goal is to parallelize pixel operations efficiently across the GPU.
 
 ## Algorithms  
 
-### 1. Grayscale (6 pts)  
+### 1. Grayscale  
 - Convert an RGB image to grayscale using weighted sum:  
   `0.299 * R + 0.587 * G + 0.114 * B`  
 - Produces a single-channel image with values in `[0, 255]`.  
 - Optimized for coalesced memory access across different image sizes.  
 
-### 2. Gaussian Blur (8 pts)  
+### 2. Gaussian Blur 
 - Apply a **Gaussian filter** to each channel (R, G, B) separately.  
 - Each pixel is replaced by a weighted sum of neighbors using a Gaussian kernel.  
 - Kernel values precomputed on the CPU (Python).  
@@ -28,7 +28,7 @@ The goal is to parallelize pixel operations efficiently across the GPU.
   - Must work on images larger than a single block.  
   - Shared/constant memory used where applicable.  
 
-### 3. Brightness Adjustment (6 pts)  
+### 3. Brightness Adjustment 
 - Two kernels:  
   1. Compute mean pixel intensity.  
   2. Scale pixel values relative to mean by a user-provided factor.  
